@@ -1,0 +1,266 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Main HTML tages */
+html, body { height: 100%; }
+body,th,td { font-family: 'Myriad Set','Lucida Grande', Geneva, Arial, Verdana, sans-serif; font-size: 11px; }
+body { color: #000; margin: 0; }
+img { border: 0; padding: 0; }
+form { margin: 0; padding: 0; }
+input { margin: 0; }
+
+/* For the main table of the page */
+.frame { width: 1000px; height: 100%; margin: 0; padding: 0; }
+
+/* This is for the top banner */
+.banner { width:100%; height:85px; margin:0; padding:0; }
+.banner .left { background: url(../images/banner-left.png) no-repeat; width: 22px; padding:0; margin:0; }
+.banner .right { background: url(../images/banner-right.png) no-repeat; width: 22px; padding:0; margin:0; }
+.banner .middle { background: url(../images/banner-middle.png) repeat-x; padding:0; margin:0; padding-bottom:10px; }
+.banner .text { width:100%; height:100%; }
+.banner .text-left { text-align:left; font-weight:bold; font-size: 32px; vertical-align:middle; }
+.banner .text-left .section { padding-left:2px; font-weight:bold; font-size: 11px; }
+.banner .text-middle { text-align:center; font-size: 12px; vertical-align:bottom; }
+.banner .text-right { text-align:right; font-size: 12px; white-space:nowrap; vertical-align:bottom; }
+
+.content { padding: 10px; }
+
+/* These are for displaying the error and information messages on the screen. */
+.errMessage { width:100%; padding:1px 0 1px 0; margin:0;}
+.errMessage .icon { background: url(../images/error_alert.png) no-repeat;height:20px; width:32px; padding:0; margin:0; }
+.errMessage .msg { background: #FFBFC5; text-align:left; vertical-align:middle; white-space:nowrap; }
+.infMessage { width:100%; padding:1px 0 2px 0; margin:0;}
+.infMessage .icon { background: url(../images/success_check.png) no-repeat;height:20px; width:32px; padding:0; margin:0; }
+.infMessage .msg { background: #B3EFB5; text-align:left; vertical-align:middle; white-space:nowrap; }
+
+/* Basic formatting for the text, select, textarea and checkbox type fields */
+input, select, button { vertical-align: baseline; border: 1px solid #999; }
+input, select, textarea { font-size: 11px; border: 1px solid #999; }
+input[type=checkbox] { vertical-align: middle; }
+
+/* This is for the Frame Boxes */
+.framebox { margin:0; padding:0; }
+.framebox .fbtl { background: url(../images/frame-tl.png) no-repeat; height: 13px; width: 13px; }
+.framebox .fbtm { background: url(../images/frame-tm.png) repeat-x; height: 13px; }
+.framebox .fbtr { background: url(../images/frame-tr.png) no-repeat; height: 13px; width: 15px; }
+.framebox .fblm { padding-left: 13px; }
+.framebox .fbm  { vertical-align:top; }
+.framebox .fbrm { padding-left: 15px; }
+.framebox .fbbl { background: url(../images/frame-bl.png) no-repeat; height: 15px; width: 13px; }
+.framebox .fbbm { background: url(../images/frame-bm.png) repeat-x; height: 15px; }
+.framebox .fbbr { background: url(../images/frame-br.png) no-repeat; height: 15px; width: 15px; }
+
+.headerlinks td { width:75px; text-align:center; white-space:nowrap; }
+.headerlinks a { font-size:13px; text-decoration:none; }
+.headerlinks .linkselected { font-weight:bold; text-decoration:underline; }
+
+.toolbar_title { text-align:center; font-weight:bold; padding-bottom:10px; font-size:12px; }
+.toolbar_link { padding-top:3px; }
+.toolbar_link a { font-size:11px; color:black; text-decoration:none; }
+.toolbar_cat { font-size:12px; font-weight:bold; padding-top:10px; border-bottom:1px solid #999; }
+
+.header1 { font-size: 20px; font-weight: bold; }
+.header2 { font-size: 16px; font-weight: bold; }
+.header3 { font-size: 14px; font-weight: bold; }
+.header4 { font-size: 12px; font-weight: bold; }
+.header5 { font-size: 10px; font-weight: bold; }
+.header6 { font-size: 8px; font-weight: bold; }
+
+.instructions { padding: 3px 5px; border: 1px solid #999; font-size: 10px; background:#fffeae; }
+.instructions .left { text-align:left; vertical-align:top; }
+.instructions .right { text-align:right; vertical-align:top; }
+	
+/* Basic formatting for the text, select, textarea and checkbox type fields */
+input, select, button { vertical-align: baseline; border: 1px solid #999; }
+input, select, textarea { font-size: 11px; border: 1px solid #999; }
+input[type=checkbox] { vertical-align: middle; }
+
+/* This is the forms section all CSS that affect forms go in this area.*/
+.FormName { font-size: 10px; line-height: 14px; font-weight: bold; margin-left:2px; }
+.FormField { margin-bottom: 5px; }
+.FormDisplay { margin: 0 0 5px 5px; font-size: 12px; }
+.NoFormDisplay { margin: 0 0 5px 3px; font-size: 10px; color: gray; font-style: italic; }
+.FormRequired { font-size: 10px; line-height: 16px; color: #666; }
+.FormButtons { margin: 5px 3px 3px 0px; }
+.FormTextBox { width:100%; }
+.FormTextArea { width:100%; }
+.FormUploadFile { margin: 2px 0px 0px 0px; } 
+
+/* This is for tables typically found in Forms */
+.innerbody { }
+.twoCol { width: 100%; }
+.twoCol td { vertical-align: top; }
+.twoCol td.tcleft { width: 50%; text-align:left; }
+.twoCol td.tcright { width: 50%; text-align:left; }
+.twoCol .tcgutter { padding: 0 10px; }
+.colHeader { background:#DDD; font-size:14px; font-weight:bold; padding:3px; margin-top:5px; max-width:250px; }
+.colHeader100 { background:#DDD; font-size:14px; font-weight:bold; padding:3px; margin-top:5px; width:100%; }
+
+.manuals_twoCol { width: 100%; }
+.manuals_twoCol td { vertical-align: top; }
+.manuals_twoCol td.tcleft { width: 50%; text-align:left; font-weight:bold; vertical-align:middle; }
+.manuals_twoCol td.tcright { width: 50%; text-align:right; vertical-align:middle; }
+.manuals_twoCol .tcgutter { padding: 0 10px; }
+
+/* overlays */
+.warning { text-align: center; border: 1px solid #666; width: 400px; margin: auto; background: #fff; margin-top: 200px; display: block; }
+.warning .red { background: #6F0000; color: #fff; padding: 10px; font-size: 16px; }
+.warning .body { padding: 15px 10px; }
+
+.notice { text-align: center; border: 1px solid #666; width: 400px; margin: auto; background: #fff; margin-top: 200px; display: block; }
+.notice .green { background: #A4EFAC; color: #000; padding: 10px; font-size: 16px; }
+.notice .body { padding: 15px 10px; }
+
+.normal { display: block; }
+.overlaypage { display: none; text-align: center; z-index: 10; }
+/* .overlaypage .gray { position: absolute; top: 0; left: 0; height: 100%; width: 100%; opacity: .5; filter: alpha(opacity=50); background: #333; z-index: 20; } */
+.overlaypage .gray { position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: url(../images/greyoverlay.png) repeat; }
+.overlaypage .message { position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 30; }/* overlays */
+.warning { text-align: center; border: 1px solid #666; width: 400px; margin: auto; background: #fff; margin-top: 200px; display: block; }
+.warning .red { background: #6F0000; color: #fff; padding: 10px; font-size: 16px; }
+.warning .body { padding: 15px 10px; }
+
+.notice { text-align: center; border: 1px solid #666; width: 400px; margin: auto; background: #fff; margin-top: 200px; display: block; }
+.notice .green { background: #A4EFAC; color: #000; padding: 10px; font-size: 16px; }
+.notice .body { padding: 15px 10px; }
+
+.normal { display: block; }
+.overlaypage { display: none; text-align: center; z-index: 10; }
+/* .overlaypage .gray { position: absolute; top: 0; left: 0; height: 100%; width: 100%; opacity: .5; filter: alpha(opacity=50); background: #333; z-index: 20; } */
+.overlaypage .gray { position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: url(../images/greyoverlay.png) repeat; }
+.overlaypage .message { position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 30; }
+
+.resultsShown { font-size: 12px; color: #666; }
+
+.open {	display: inline; }
+.closed { display: none; }
+
+.nav_cat { padding:5px 0; }
+.nav_cat table { width: 100%; height:15px; cursor:pointer; }
+.nav_cat .icon { padding:2px; width:1px; }
+.nav_cat .category { vertical-align:middle; text-align:left; font-weight:bold; padding:2px; }
+.nav_cat .nav_item { padding:3px 3px 3px 14px; cursor:pointer; }
+.nav_cat .nav_highlight { background: #DDD; font-weight:bold; }
+.nav_cat .nav_highlight2 { background: yellow; }
+
+.nav_cat2 { padding:0; }
+.nav_cat2 table { width: 100%; height:15px; cursor:pointer; }
+.nav_cat2 .icon { padding:2px; width:1px; }
+.nav_cat2 .category { vertical-align:middle; text-align:left; font-weight:bold; padding:2px; }
+.nav_cat2 .nav_item { padding:3px 3px 3px 14px; cursor:pointer; }
+.nav_cat2 .nav_highlight { background: #DDD; font-weight:bold; }
+.nav_cat2 .nav_highlight2 { background: yellow; }
+
+.template { border: 1px solid #999; border-top:none; padding:5px; width:100%; }
+.template .left { white-space:nowrap; width:20px; font-weight:bold; padding:3px; text-align:right; }
+.template .right { width:100%; padding:3px; }
+.template .both { width:100%; padding:5px; padding-right:10px; border-top: 1px solid #999; }
+
+.leftlinks { padding:5px; padding-left:2px; cursor:pointer; }
+.left_highlight { background: #DDD; font-weight:bold; }
+
+
+#applesearch .sbox_l  {
+	background: white url('./apple_search/srch_l.gif') no-repeat top left;
+	float: left;
+	width: 19px; height: 19px;
+}
+
+#applesearch .sbox_r  {
+	background: white url('./apple_search/srch_r.gif') no-repeat top left;
+	float: left;
+	width: 19px; height: 19px;
+}
+
+#applesearch .sbox_field {
+	background: white url('./apple_search/srch_bg.gif') repeat-x top left;
+	float: left;
+	border: 0;
+	height: 19px; width: 100px;
+	outline: none;
+	padding: 1px;
+	font: 11px/13px arial;
+	color: #000;
+}
+
+#content {
+	clear: both;
+}
+
+SPAN.searchword { background-color:yellow; }
+
+/* Month Calendar Css */
+.calmonth { width: 770px; border: 1px solid gray; border-right: 0; }
+.calmonth td { vertical-align: top; }
+.calmonth th { width: 110px; border-right: 1px solid gray; background: #bbb; font-weight: bold; font-size: 10px; padding: 2px 0; }
+.calmonth .diffmonth { border-right: 1px solid gray; border-top: 1px solid gray; background: #eee; color: #666; vertical-align: top; font-size: 10px; }
+.calmonth .daybox { vertical-align: top; width: 110px; font-size: 10px; height: 100px; white-space: normal; border-right: 1px solid gray; border-top: 1px solid gray; }
+.calmonth .dayclosed { background: #FFEFEF; vertical-align: top; width: 110px; font-size: 10px; height: 100px; white-space: normal; border-right: 1px solid gray; border-top: 1px solid gray; }
+.calmonth .todaybox { background: #FEFF9F; vertical-align: top; width: 110px; font-size: 10px; height: 100px; white-space: normal; border-right: 1px solid gray; border-top: 1px solid gray; }
+.calmonth .dom { color:blue; text-align: right; padding-right:1px;padding-top:1px; }
+.calmonth .fright { float: right; }
+.calmonth .fleft { float: left; }
+.calmonth .clear { clear: both; }
+.calmonth td a { text-decoration: none; }
+
+.SH { width:100%; padding-bottom:10px; }
+.SH .al { width:1%; text-align:left; vertical-align:middle; white-space:nowrap; cursor:pointer; }
+.SH .ar { width:1%; text-align:right; vertical-align:middle; white-space:nowrap; cursor:pointer; }
+.SH .pm { width:1%; text-align:left;vertical-align:middle; font-size:13px; white-space:nowrap; cursor:pointer; }
+.SH .nm { width:1%; text-align:right;vertical-align:middle; font-size:13px; white-space:nowrap; cursor:pointer; }
+.SH .tm { width:100%; text-align:center; vertical-align:middle; font-size:14px; font-weight:bold; }
+
+
+
+#sddm { 
+	margin: 0;
+	padding: 0;
+	z-index: 30;
+}
+
+#sddm li {	
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#sddm li a { 
+	display: block;
+	margin: 0 1px 0 0;
+	text-align: center;
+	text-decoration: none;
+}
+
+#sddm li a:hover {  }
+
+#sddm div { 
+	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF;
+	border: 1px solid #999;
+}
+
+#sddm div a { 
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 5px 10px;
+	width: auto;
+	white-space: nowrap;
+	text-align: left;
+	text-decoration: none;
+	background: #EAEBD8;
+	color: #000;
+	font-size:11px;
+}
+
+#sddm div a:hover {
+	background: #FFFF00;
+	color: #000;
+}
+
+/* History CSS */
+del { background:#fcc; }
+ins { background:#cfc; }

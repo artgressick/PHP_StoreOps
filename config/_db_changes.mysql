@@ -1,0 +1,119 @@
+/* 4/22/2008 */
+
+CREATE TABLE StoreHours (
+  ID SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  chrKEY VARCHAR(40) NOT NULL,
+  bDeleted TINYINT(1) NOT NULL DEFAULT 0,
+  idStore SMALLINT UNSIGNED NOT NULL,
+  idDayOfWeek TINYINT(2) NOT NULL,
+  dtCreated DATETIME NOT NULL,
+  tOpening TIME,
+  tClosing TIME,
+  index(bDeleted),
+  index(chrKEY(10))
+) TYPE=MyISAM, CHARACTER SET utf8;
+ALTER TABLE StoreHours ADD bClosed TINYINT(1) NOT NULL DEFAULT 0 AFTER bDeleted;
+
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('store_hours','Store Hours','Store Hours');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('storehour_menu','Store Hours Menu','Store Hours Menu');
+
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('update_hours','Update Regular Hours','Update Regular Hours');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('update_hours_instructions','Please Enter/Update your Stores Hours of Operations for Normal Operation','Update Store Hours Instructions. Use time enteries of 13:00 or 1:00 pm.');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('Sunday','Sunday','Sunday'),('Monday','Monday','Monday'),('Tuesday','Tuesday','Tuesday'),('Wednesday','Wednesday','Wednesday'),('Thursday','Thursday','Thursday'),('Friday','Friday','Friday'),('Saturday','Saturday','Saturday');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('time_format2','%l:%i %p','%l:%i %p');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('must_enter_begin_time_for','You must enter a Begin time for','You must enter a Begin time for');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('must_enter_close_time_for','You must enter a Close time for','You must enter a Close time for');
+
+/* 4/24/2008 */
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('closed','Closed','Closed');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('January','January','January'),('February','February','February'),('March','March','March'),('April','April','April'),('May','May','May'),('June','June','June'),('July','July','July'),('August','August','August'),('September','September','September'),('October','October','October'),('November','November','November'),('December','December','December');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('open','Open','Open'),('close','Close','Close');
+
+INSERT INTO Security SET ID=14, dOrder=14, chrOptions='1,2,3,4', chrDescription='Holidays';
+INSERT INTO Security SET ID=15, dOrder=15, chrOptions='1,3', chrDescription='Store Hours';
+
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('store_hours_update_success','Store Hours have been updated successfully.','Store Hours have been updated successfully.'),('store_hours_error','An error has occurred while trying to add these store hours.','An error has occurred while trying to add these store hours.'),('store_hours_no_change','No changes have been made to the store hours.','No changes have been made to the store hours.');
+
+/* 4/25/2008 */
+CREATE TABLE Holidays (
+  ID SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  chrKEY VARCHAR(40) NOT NULL,
+  bDeleted TINYINT(1) NOT NULL DEFAULT 0,
+  bShow TINYINT(1) NOT NULL DEFAULT 0,
+  dtCreated DATETIME NOT NULL,
+  dBegin DATE NOT NULL,
+  dEnd DATE NOT NULL,
+  chrHoliday VARCHAR(150) NOT NULL,
+  index(bDeleted),
+  index(chrKEY(10))
+) TYPE=MyISAM, CHARACTER SET utf8;
+
+CREATE TABLE HolidayStoreHours (
+  ID SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  chrKEY VARCHAR(40) NOT NULL,
+  bDeleted TINYINT(1) NOT NULL DEFAULT 0,
+  idStore SMALLINT UNSIGNED NOT NULL,
+  idHoliday SMALLINT UNSIGNED NOT NULL,
+  idDayOfWeek TINYINT(2) NOT NULL,
+  dDate DATE NOT NULL,
+  tOpening TIME NOT NULL,
+  tClosing TIME NOT NULL,
+  dtCreated DATETIME NOT NULL,
+  index(bDeleted),
+  index(chrKEY(10))
+) TYPE=MyISAM, CHARACTER SET utf8;
+
+ALTER TABLE Holidays ADD idCountry SMALLINT UNSIGNED NOT NULL AFTER dEnd;
+ALTER TABLE Holidays ADD chrBack VARCHAR(20) NOT NULL AFTER chrHoliday;
+ALTER TABLE Holidays ADD chrText VARCHAR(20) NOT NULL AFTER chrBack;
+
+/* 4/25/2008 */
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('date_format2','%M %D %Y','%M %D %Y');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('please_fill_holiday_hours','Please fill in new hours for the following holiday(s). Click on the holiday to enter hours.','Please fill in new hours for the following holiday(s). Click on the holiday to enter hours.');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('update_holiday_hours','Update Holiday Hours','Update Holiday Hours'),('update_holiday_hours_instructions','Please Enter/Update your Stores Hours of Operations for this Holiday. Use time enteries of 13:00 or 1:00 pm.','Please Enter/Update your Stores Hours of Operations for this Holiday. Use time enteries of 13:00 or 1:00 pm.');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('invalid_holiday','Invalid Holiday','Invalid Holiday');
+
+/* 4/28/2008 */
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('print_articles','Print Articles','Print Articles');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('print_articles_book','Print Articles From Book','Print Articles From Book');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('print_articles_inst','Check the Articles from this book you would like to print/export, and click "Submit"','Print Articles from Book Instructions');
+
+ALTER TABLE Manuals ADD bResource TINYINT(1) NOT NULL DEFAULT 0 AFTER bDeleted;
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('resources','Resources','Resources');
+
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('holidays','Holidays','Holidays'),('holiday_instructions','Click on a holiday to view/update your hours','Holiday Page Instructions.');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('completed','Completed','Completed'),('not_completed','Not Completed','Not Completed');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('holiday','Holiday','Holiday'),('begin_date','Begin Date','Begin Date'),('end_date','End Date','End Date');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('php_date','n/j/Y','PHP Style Date');
+ALTER TABLE HolidayStoreHours ADD bClosed TINYINT(1) NOT NULL DEFAULT 0 AFTER bDeleted;
+
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('holiday_store_hours_update_success','Holiday Store Hours have been updated successfully.','Holiday Store Hours have been updated successfully.'),('holiday_store_hours_error','An error has occurred while trying to add these holiday store hours.','An error has occurred while trying to add these holiday store hours.');
+
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('store_hours_email1','has updated their store hours.','has updated their store hours.'),('store_hours_email2','Store hours updated for','Store hours updated for')
+,('store_hours_email3','has submitted their store hours.','has submitted their store hours.'),('store_hours_email4','Store hours submitted for','Store hours submitted for')
+,('php_hours','g:i a','PHP style time'),('holiday_email1','has submitted/updated their holiday store hours for','has submitted/updated their holiday store hours for')
+,('holiday_email2','Holiday Store hours submitted for','Holiday Store hours submitted for');
+
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription) VALUES ('check_all','Check All','Check All'),('uncheck_all','Uncheck All','Uncheck All');
+
+
+/* 4/30/2008 */
+ALTER TABLE Stores ADD txtLanguage TEXT NOT NULL DEFAULT '1';
+UPDATE Stores SET txtLanguage='1';
+
+/* RUN "pear install Text_Diff" on server */
+
+/* 5/29/2008 */
+ALTER TABLE EscalatorTemplates ADD bPlainEmail TINYINT(1) NOT NULL DEFAULT 0 AFTER bShow;
+ALTER TABLE EscalatorTemplates ADD bManager TINYINT(1) NOT NULL DEFAULT 0 AFTER bPlainEmail;
+ALTER TABLE Stores ADD chrManager VARCHAR(200) NOT NULL AFTER chrFax;
+ALTER TABLE Stores ADD chrManagerEmail VARCHAR(200) NOT NULL AFTER chrManager;
+
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription, dOrder, chrGroup) VALUES ('your_name','Your Name','Your Name','57.1','Escalations'),('your_email','Your E-mail','Your E-mail','57.2','Escalations');
+INSERT INTO MasterLang (chrVar, chrLabel, chrDescription, dOrder, chrGroup) VALUES ('employee_name','Employee Name','Employee Name','57.3','Escalations'),('employee_email','Employee E-mail','Employee E-mail','57.4','Escalations');
+
+ALTER TABLE Escalations ADD chrEmployeeName VARCHAR(255) AFTER chrCC;
+ALTER TABLE Escalations ADD chrEmployeeEmail VARCHAR(255) AFTER chrEmployeeName;
+
+All above pushed
+***********************************************************************
